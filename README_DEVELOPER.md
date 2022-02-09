@@ -22,9 +22,16 @@ This is also the reason I have removed obvious comments.
 
 I did not touch the generated code, since that will be overwritten anyway by each version update.
 
+## One class per file
+
+The models used in the OrderService all resided in one file. I splitted them up to one model per file.
+I do this to improve readability and this way it is easier to find classes. In general, I try to be consistent.
+
 ## Complexity
 
 I left the structure mostly intact. I found no need to make things more complicated.
+I could create various layers, such as a data access layer, etc. but for such a small project I would never do that.
+For corporate solutions, this is a different story. I prefer the KISS principle.
 
 ## Namespace
 
