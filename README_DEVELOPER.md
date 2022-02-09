@@ -5,13 +5,13 @@ The biggest change I made was adding unit tests for the controllers, services an
 
 ## Testing tools
 
-Tools I used for testing are Moq and FluentAssertions.
-Moq allows for mocking objects for testing.
+Tools I used for testing are Moq and FluentAssertions. Moq allows for mocking objects.
 FluentAssertions gives readable assertions in your test, such as userName.Should().Be("Reino Boonstra");
+I did not add tests for the jQuery code, since I believe this assessment had to do with .NET C#.
 
 ## Inversion of control
 
-To be able to test the code I needed some dependency injection, so I introduced AutoFac Inversion of Control library
+To be able to test the code I needed some dependency injection, so I introduced AutoFac Inversion of Control library.
 
 ## Code comments
 
