@@ -17,7 +17,8 @@ namespace BrainShark.BrainWare.WebApp.Infrastructure.Services
 
         public IEnumerable<Order> GetForCompany(int companyId)
         {
-            const string sql1 = "SELECT c.name, o.description, o.order_id FROM company c INNER JOIN [order] o on c.company_id=o.company_id";
+            var sql1 =
+                $"SELECT c.name, o.description, o.order_id FROM company c INNER JOIN [order] o on c.company_id=o.company_id WHERE c.company_id={companyId}";
             
             var reader1 = _database.ExecuteReader(sql1);
             var values = new List<Order>();
@@ -38,7 +39,8 @@ namespace BrainShark.BrainWare.WebApp.Infrastructure.Services
 
             reader1.Close();
 
-            const string sql2 = "SELECT op.price, op.order_id, op.product_id, op.quantity, p.name, p.price FROM orderproduct op INNER JOIN product p on op.product_id=p.product_id";
+            const string sql2 =
+                "SELECT op.price, op.order_id, op.product_id, op.quantity, p.name, p.price FROM orderproduct op INNER JOIN product p on op.product_id=p.product_id";
 
             var reader2 = _database.ExecuteReader(sql2);
             var values2 = new List<OrderProduct>();
